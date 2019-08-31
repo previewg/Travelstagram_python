@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="kor">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Nanum+Brush+Script&subset=korean');
+        body
+        {
+            background-image:url("static/img/travel_2.jpg");
+            background-size:100%;
+            background-repeat:no-repeat;
+        }
+        .jb-xx-large { font-size: xx-large; }
+    </style>
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</head>
+
+<body >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="static/img/logo.png" style="height: 5%; width: 5%">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">홈<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">지금 뜨는 여행지</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">추천 여행경로</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            여행 준비하기
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">관광지</a>
+            <a class="dropdown-item" href="#">맛집</a>
+            <a class="dropdown-item" href="#">숙소</a>
+            <a class="dropdown-item" href="#">팁</a>
+            </div>
+        </li>
+        </ul>
+        
+    </div>
+    </nav>
+    <div>
+        <h1  class="display-2" style="font-family: 'Nanum Brush Script', cursive;position: relative; left: 50px; top: 25px; ">여행지 TOP10</h1>
+        <table class="table table-light" style="height: 100%; width: 40% ;position: relative; left: 80px; top: 50px;">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">태그 TOP10</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for idx in range(tops[:10]|length) %}
+                    <tr class="table-active">
+                            <th scope="row"> {{idx+1}}</th>
+                            <td>{{ tops['국가'].values[idx] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div style="position: relative; left: 720px; top: -230px;">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="height: 40%; width: 40%" >
+                <div class="carousel-inner" >
+                    <div class="carousel-item active">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/x1efrNyrCGc?amp;autoplay=1" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+</body>
+
+</html>

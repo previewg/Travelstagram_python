@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <title></title>
+    <body>
+        {{ name }}
+        {% for idx in range(10) %}
+            <p>
+                <a href ="{{ data['href'][idx] }}"> 
+                <img src='{{ data["img"][idx] }}'/>
+                {{ data['title'][idx] }} </a>
+            </p>
+        {% endfor %}
+    </body>
+    <script>
+    </script>
+</html>

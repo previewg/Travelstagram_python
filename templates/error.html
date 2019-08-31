@@ -1,0 +1,11 @@
+<script>
+    // 경고창 뜨고 확인 누르면
+    alert('{{ msg }}');
+    {% if url:  %}
+        // 페이지 이동
+        document.location.href='{{ url }}';
+    {% else:  %}
+        // 이전 페이지로 되돌아 간다
+        history.back();
+    {% endif %}    
+</script>
